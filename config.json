@@ -1,6 +1,6 @@
 {
-  "base_url": "https://agusls.netlify.app",
-  "site_title": "Agusls Blog",
+  "base_url": "https://elily-blog.netlify.app/",
+  "site_title": "Elily Blog",
   "site_description": "Personal Blog for Netlify",
   "site_keywords": [
     {
@@ -13,9 +13,9 @@
       "keyword": "React"
     },
     {
-      "keyword": "Agusls"
+      "keyword": "Elily"
     }
   ],
   "posts_per_page": 5,
-  "twitter_account": "@agusls"
+  "twitter_account": "@Elily"
 }

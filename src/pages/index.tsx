@@ -18,6 +18,7 @@ export default function Index() {
           </h1>
           <span className="handle">{config.twitter_account}</span>
           <h2>A blog template with Next.js and Netlify.</h2>
+          <h3>Elily blog demo</h3>
           <ShareList url={`/`} text={config.site_title} />
         </div>
       </div>
