@@ -1,0 +1,21 @@
+{
+  "base_url": "https://agusls.netlify.app",
+  "site_title": "Agusls Blog",
+  "site_description": "Personal Blog for Netlify",
+  "site_keywords": [
+    {
+      "keyword": "Next.js"
+    },
+    {
+      "keyword": "Netlify"
+    },
+    {
+      "keyword": "React"
+    },
+    {
+      "keyword": "Agusls"
+    }
+  ],
+  "posts_per_page": 5,
+  "twitter_account": "@agusls"
+}
