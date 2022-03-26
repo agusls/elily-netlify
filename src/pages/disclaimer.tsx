@@ -6,22 +6,29 @@ import { ShareList } from "../components/ShareList";
 import config from "../lib/config";
 
 export default function Index() {
-  return (
-    <Layout>
-      <BasicMeta url={"/"} />
-      <OpenGraphMeta url={"/"} />
-      <TwitterCardMeta url={"/"} />
-      <div className="container">
-        <div>
-          <h1>
-            Welcome on <span className="fancy">{config.site_title}</span>
-          </h1>
-          <span className="handle">{config.twitter_account}</span>
-          <h2>Mengulas beragam aplikasi dan tutorial sesuai trend saat ini</h2>
-          <ShareList url={`/`} text={config.site_title} />
-        </div>
-      </div>
-      <style jsx>{`
+    return (
+        <Layout>
+            <BasicMeta url={"/"} />
+            <OpenGraphMeta url={"/"} />
+            <TwitterCardMeta url={"/"} />
+            <div className="container">
+                <div>
+                    <h1>
+                        Disclaimer <span className="fancy">{config.site_title}</span>
+                    </h1>
+                    <span className="handle"></span>
+
+                    <p></p>
+
+                    <p></p>
+
+                    <p>Untuk menghubungi tim kami, Anda dapat mengirimkan surat elektronik ke alamat
+                        teknosia.netlify[at]gmail.com.</p>
+
+                    <ShareList url={`/`} text={config.site_title} />
+                </div>
+            </div>
+            <style jsx>{`
         .container {
           display: flex;
           align-items: center;
@@ -40,6 +47,9 @@ export default function Index() {
           font-size: 1.75rem;
           font-weight: 400;
           line-height: 1.25;
+        }
+        p {
+            line-height: 1.75rem;
         }
         .fancy {
           color: #15847d;
@@ -60,6 +70,6 @@ export default function Index() {
           }
         }
       `}</style>
-    </Layout>
-  );
+        </Layout>
+    );
 }
