@@ -4,6 +4,7 @@ import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import { ShareList } from "../components/ShareList";
 import config from "../lib/config";
+import Copyright from "../components/Copyright";
 
 export default function Index() {
   return (
@@ -27,49 +28,58 @@ export default function Index() {
 
           <ShareList url={`/`} text={config.site_title} />
         </div>
-      </div>
-      <style jsx>{`
-        .container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex: 1 1 auto;
-          padding: 0 1.5rem;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        h1 {
-          font-size: 2.5rem;
-          margin: 0;
-          font-weight: 500;
-        }
-        h2 {
-          font-size: 1.75rem;
-          font-weight: 400;
-          line-height: 1.25;
-        }
-        p {
-            line-height: 1.75rem;
-        }
-        .fancy {
-          color: #15847d;
-        }
-        .handle {
-          display: inline-block;
-          margin-top: 0.275em;
-          color: #9b9b9b;
-          letter-spacing: 0.05em;
-        }
 
-        @media (min-width: 769px) {
-          h1 {
-            font-size: 3rem;
-          }
-          h2 {
-            font-size: 2.25rem;
-          }
-        }
-      `}</style>
+        <footer>
+          <Copyright />
+        </footer>
+
+      </div>
+      <style jsx>
+        {`
+            .container {
+              display: block;
+              max-width: 36rem;
+              width: 100%;
+              margin: 0 auto;
+              padding: 0 1.5rem;
+              box-sizing: border-box;
+              z-index: 0;
+            }
+            .metadata div {
+              display: inline-block;
+              margin-right: 0.5rem;
+            }
+            article {
+              flex: 1 0 auto;
+            }
+            h1 {
+              margin: 0 0 0.5rem;
+              font-size: 2.25rem;
+            }
+            .tag-list {
+              list-style: none;
+              text-align: right;
+              margin: 1.75rem 0 0 0;
+              padding: 0;
+            }
+            .tag-list li {
+              display: inline-block;
+              margin-left: 0.5rem;
+            }
+            .social-list,
+            .share-list {
+              margin-top: 1rem;
+              text-align: center;
+              margin-bottom: 3rem;
+            }
+            @media (min-width: 769px) {
+              .container {
+                display: flex;
+                flex-direction: column;
+              }
+            }
+          `}
+      </style>
     </Layout>
   );
 }

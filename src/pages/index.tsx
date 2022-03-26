@@ -35,11 +35,17 @@ export default function Index({ posts, tags, pagination }: Props) {
           <span className="handle">{config.twitter_account}</span>
           <h2>Mengulas beragam aplikasi dan tutorial sesuai trend saat ini</h2>
           <ShareList url={`/`} text={config.site_title} />
+
+          <PostList posts={posts} tags={tags} pagination={pagination} />
+
         </div>
+
+        
+
       </div>
       <style jsx>{`
         .container {
-          display: flex;
+          // display: flex;
           align-items: center;
           justify-content: center;
           flex: 1 1 auto;
@@ -77,7 +83,7 @@ export default function Index({ posts, tags, pagination }: Props) {
           }
         }
       `}</style>
-      <PostList posts={posts} tags={tags} pagination={pagination} />
+      
     </Layout>
   );
 }
