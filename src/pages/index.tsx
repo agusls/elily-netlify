@@ -52,7 +52,7 @@ export default function Index({ posts, tags, pagination }: Props) {
           padding: 0 1.5rem 20px 1.5rem;
           max-width: 800px;
           margin: 0 auto 20px auto;
-          border-bottom: 1px solid #ddd;
+          // border-bottom: 1px solid #ddd;
         }
         h1 {
           font-size: 2.5rem;
