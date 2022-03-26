@@ -1,11 +1,27 @@
+import { GetStaticProps } from "next";
 import Layout from "../components/Layout";
 import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import { ShareList } from "../components/ShareList";
+import PostList from "../components/HomePostList";
 import config from "../lib/config";
+import { countPosts, listPostContent, PostContent } from "../lib/posts";
+import { listTags, TagContent } from "../lib/tags";
+import Head from "next/head";
 
-export default function Index() {
+type Props = {
+  posts: PostContent[];
+  tags: TagContent[];
+  pagination: {
+    current: number;
+    pages: number;
+  };
+};
+
+export default function Index({ posts, tags, pagination }: Props) {
+  const url = "/posts";
+  const title = "All posts";
   return (
     <Layout>
       <BasicMeta url={"/"} />
@@ -27,9 +43,10 @@ export default function Index() {
           align-items: center;
           justify-content: center;
           flex: 1 1 auto;
-          padding: 0 1.5rem;
+          padding: 0 1.5rem 20px 1.5rem;
           max-width: 800px;
-          margin: 0 auto;
+          margin: 0 auto 20px auto;
+          border-bottom: 1px solid #ddd;
         }
         h1 {
           font-size: 2.5rem;
@@ -60,6 +77,23 @@ export default function Index() {
           }
         }
       `}</style>
+      <PostList posts={posts} tags={tags} pagination={pagination} />
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = listPostContent(1, config.posts_per_page);
+  const tags = listTags();
+  const pagination = {
+    current: 1,
+    pages: 1,
+  };
+  return {
+    props: {
+      posts,
+      tags,
+      pagination,
+    },
+  };
+};
