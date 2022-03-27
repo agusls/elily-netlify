@@ -41,7 +41,7 @@ export default function Navigation() {
         <style jsx>
           {`
             .container {
-              width: 0;
+              width: 100%;
             }
             
             ul {
@@ -55,7 +55,7 @@ export default function Navigation() {
               position: fixed;
               top: 0;
               background-color: #fff;
-              display: flex;
+              display: inline-flex;
               flex-direction: column;
               justify-content: center;
               z-index: 1;
@@ -67,7 +67,7 @@ export default function Navigation() {
               transform: translateY(0);
             }
             li {
-              margin-bottom: 1.75rem;
+              margin-bottom: 1rem;
               font-size: 2rem;
               padding: 0 1.5rem 0 0;
             }
@@ -80,15 +80,23 @@ export default function Navigation() {
 
             @media (min-width: 769px) {
               .container {
-                width: 7rem;
+                max-width: 800px;
                 display: block;
+                margin: 0 auto;
               }
               ul {
-                opacity: 1;
-                width: 7rem;
+                opacity: 0.98;
+                width: 100%;
+                max-width: 800px;
+                height: 33px;
                 top: auto;
-                display: block;
+                display: inline-flex;
                 transform: translateY(0);
+                flex-direction: row;
+                column-gap: 20px;
+                border-bottom: 1px solid rgb(221 221 221 / 50%);
+                margin-top: 0px;
+                padding-top: 10px;
               }
               li {
                 font-size: 1rem;

@@ -11,7 +11,6 @@ import { ShareList } from "./ShareList";
 import TagButton from "./TagButton";
 import { getAuthor } from "../lib/authors";
 import { getTag } from "../lib/tags";
-import Copyright from "./Copyright";
 
 type Props = {
   title: string;
@@ -85,7 +84,6 @@ export default function PostLayout({
           <div className={"share-list"}>
             <ShareList url={`/posts/${slug}`} text={title} />
           </div>
-          <Copyright />
         </footer>
       </div>
       <style jsx>
